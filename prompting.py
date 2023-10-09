@@ -9,8 +9,8 @@ openai.api_key = secrets["openai_api_key"]
 #openai.api_key = st.secrets["openai_api_key"]
 
 
-def generate_risks(risk_description):
-    text = f"""Rewrite the following text "{risk_description}"  by correcting the grammatical errors
+def generate_test_text(test_text):
+    text = f"""Rewrite the following text "{test_text}"  by correcting the grammatical errors
      Please take some time to think and then provide only a complete rewritten text , I don't need any explanation."""
 
     response = openai.ChatCompletion.create(
