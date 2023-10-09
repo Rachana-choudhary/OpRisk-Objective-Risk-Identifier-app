@@ -35,3 +35,4 @@ then simply write \"No steps provided.\"
     )
 
     return response
+    print(response)
