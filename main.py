@@ -25,7 +25,7 @@ clicked = st.button("Submit")
 
 
 if clicked:
-    if not text_test:
+    if not test_text:
         st.warning("Please fill in all the information.")
 
     else:
