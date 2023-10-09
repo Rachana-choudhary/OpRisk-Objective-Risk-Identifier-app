@@ -22,7 +22,8 @@ Step N - …
 If the text does not contain a sequence of instructions, \ 
 then simply write \"No steps provided.\"
 
-\"\"\"{text}\"\"\""""
+\"\"\"{test_text}\"\"\"
+"""
 
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
