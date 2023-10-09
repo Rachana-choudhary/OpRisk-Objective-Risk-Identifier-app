@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 im = Image.open("./assets/images/RS-square-logo.jpeg")
 
 st.set_page_config(
-    layout="wide", page_title="RiskSpotlight - OpRisk Risk Guidance", page_icon=im
+    layout="wide", page_title="RiskSpotlight - Text Guidance", page_icon=im
 )
 
 hide_streamlit_style = """
@@ -18,20 +18,20 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.title("OpRisk Risk Guidance")
+st.title("Text Guidance")
 
-risk_description = st.text_area("Please provide Risk Description.", value="", height=120)
+test_text = st.text_area("Please provide text", value="", height=120)
 clicked = st.button("Submit")
 
 
 if clicked:
-    if not risk_description:
+    if not text_test:
         st.warning("Please fill in all the information.")
 
     else:
         with st.spinner("Please wait..."):
-            response = prompting.generate_risks(risk_description)
+            response = prompting.generate_test_text(test_text)
 
 
-            risks_output = response["choices"][0]["message"]["content"]
-            st.write(risks_output)
+            test_text_output = response["choices"][0]["message"]["content"]
+            st.write(test_text_output)
