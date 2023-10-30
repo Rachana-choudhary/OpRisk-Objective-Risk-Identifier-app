@@ -42,18 +42,18 @@ def generate_risks(objective, num_risks, risk_category):
     '''
 
     # Use the JSON format variable in your risk_titles string
-    risk_titles = f"""As an Operational Risk expert, please provide "{num_risks}" risks associated with the objective of "{objective}". Categorize these risks into the following categories: "{risk_category}".
+    risk_titles = f"""As an Operational Risk expert, please identify "{num_risks}" operational risks that may affect the ability of a financial services firm to achieve the objective of "{objective}". Only identify the risks for following risk categories: "{risk_category}".
     Please use the below instructions to provide the output: 
-    - Risk Title should at least have 8-12 words and provide a detailed understanding of the main event that may occur and it refers to a specific risk
+    - Risk Title should at least have 8-12 words and provide a detailed understanding of the main event that may occur and it refers to a specific risk. Ensure that each risk title always includes a word associated with a threat or negative event.
     - Avoid mentioning risk in generic way such as "Geopolitical Risks", "Vendor Dependency"
     - Every title should have a verb which should highlight the main event that could occur
     - Use the words and terms from the Objective context in the Risk Title where possible
-    - Make sure to NOT use Financial Risks, I do not need any financial risk titles.
+    - Make sure to NOT list any Financial Risks, I do not need any financial risk titles.
 
     Present the information in the following JSON format:
     {json_format}
 
-    Ensure that each risk title contains 8 to 15 words and always includes a word associated with a threat or negative event. Take your time to consider and provide an appropriate response, and include only the risk titles and categories in your answer."""
+     Take your time to consider and provide an appropriate response, and include only the risk titles and categories in your answer."""
 
 
     response = openai.ChatCompletion.create(
