@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 im = Image.open("./assets/images/RS-square-logo.jpeg")
 
 st.set_page_config(
-    layout="wide", page_title="RiskSpotlight - Process RCSA", page_icon=im
+    layout="wide", page_title="RiskSpotlight - Objective Risk Identifier", page_icon=im
 )
 
 hide_streamlit_style = """
